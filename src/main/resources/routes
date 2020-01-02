@@ -1,0 +1,2 @@
+GET     /               controllers.Default.redirect(to = "/@/health")
+GET     /@/health       com.github.avandendaele.admin.HealthController.health
