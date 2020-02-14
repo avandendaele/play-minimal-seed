@@ -6,7 +6,11 @@ import play.api.mvc.{AbstractController, ControllerComponents}
 final class HealthController(cc: ControllerComponents) extends AbstractController(cc) {
 
   def health = Action {
-    Ok(Json.obj("status" -> "up"))
+    Option("test-cr").get
+    Ok(Json.obj(
+      "status" -> "up",
+      "cr" -> Option("test-cr").get
+    ))
   }
 
 }
